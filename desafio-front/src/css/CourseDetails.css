@@ -1,0 +1,124 @@
+.course-container {
+  min-height: 100vh;
+  background-color: #f7f9fa;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #29303b;
+}
+
+.course-header {
+  background-color: #1c1d1f;
+  color: white;
+  padding: 3rem 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.course-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.course-description {
+  font-size: 1.1rem;
+  color: #dadada;
+}
+
+.main-content {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+.sidebar {
+  width: 30%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #29303b;
+  margin-bottom: 1rem;
+}
+
+.section-border {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.info-text {
+  font-size: 0.95rem;
+  color: #6a6f73;
+  margin-bottom: 0.5rem;
+}
+
+.primary-btn {
+  width: 100%;
+  border: none;
+  background-color: #5624d0;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.primary-btn:hover {
+  background-color: #4b1bb5;
+}
+
+.instructor-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.instructor-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #eee;
+  font-size: 0.9rem;
+  color: #29303b;
+}
+
+.instructor-name {
+  font-weight: 600;
+}
+
+.instructor-email {
+  color: #6a6f73;
+  font-size: 0.85rem;
+  margin-left: 0.3rem;
+}
+
+.lesson-area {
+  flex: 1;
+  width: 70%;
+}
+    

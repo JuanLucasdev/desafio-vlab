@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "qualquer 1",
+      "role": "student",
+      "email": "qualquer1@example.com",
+      "password": "123456",
+      "avatar": "https://randomuser.me/api/portraits/men/1.jpg"
+    },
+    {
+      "id": "2",
+      "name": "qualquer 2",
+      "email": "qualquer2@example.com",
+      "role": "instructor",
+      "password": "123456",
+      "avatar": "https://randomuser.me/api/portraits/women/2.jpg"
+    },
+    {
+      "id": "3",
+      "name": "Instrutora Extra",
+      "email": "extra@example.com",
+      "role": "instructor",
+      "avatar": "https://randomuser.me/api/portraits/women/3.jpg"
+    }
+  ],
+  "courses": [
+    {
+      "course_id": "c-101",
+      "creator_id": "1",
+      "title": "React Avançado e Firestore",
+      "description": "Domine hooks, context e a persistência de dados em tempo real com o Firebase.",
+      "status": "published",
+      "publish_date": "2026-06-01",
+      "start_date": "2025-11-01",
+      "end_date": "2025-12-15",
+      "instructor_ids": [
+        "2",
+        "3"
+      ]
+    },
+    {
+      "course_id": "c-102",
+      "creator_id": "2",
+      "title": "Estratégias de Design Responsivo",
+      "description": "Construa layouts adaptáveis usando Grid e Flexbox no Tailwind CSS.",
+      "status": "draft",
+      "publish_date": "2026-08-01",
+      "start_date": "2026-01-10",
+      "end_date": "2026-02-28",
+      "instructor_ids": [
+        "2"
+      ]
+    },
+    {
+      "id": "64ab",
+      "title": "test",
+      "description": "test",
+      "start_date": "2505-10-22",
+      "end_date": "2600-05-13",
+      "instructor_ids": [
+        "2"
+      ],
+      "course_id": "c-xikzysw06",
+      "creator_id": "2",
+      "status": "draft",
+      "publish_date": "2025-10-22T20:51:08.521Z"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "l-101",
+      "course_id": "c-101",
+      "title": "Introdução ao useReducer",
+      "status": "published",
+      "publish_date": "2025-11-02",
+      "video_url": "https://img.youtube.com/vi/R1/hqdefault.jpg",
+      "creator_id": "2"
+    },
+    {
+      "id": "l-102",
+      "course_id": "c-101",
+      "title": "Setup do Firebase no React",
+      "status": "published",
+      "publish_date": "2025-11-05",
+      "video_url": "https://img.youtube.com/vi/R2/hqdefault.jpg",
+      "creator_id": "2"
+    },
+    {
+      "id": "l-201",
+      "course_id": "c-102",
+      "title": "Media Queries Avançadas",
+      "status": "draft",
+      "publish_date": "2026-01-11",
+      "video_url": "https://img.youtube.com/vi/D1/hqdefault.jpg",
+      "creator_id": "2"
+    }
+  ]
+}
