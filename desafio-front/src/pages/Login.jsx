@@ -26,7 +26,7 @@ export default function Login() {
 
       const { success, message } = await login(email, password);
       if (success) {
-        navigate("/"); // redireciona direto para o dashboard
+        navigate("/"); 
       } else {
         setError(message);
       }
