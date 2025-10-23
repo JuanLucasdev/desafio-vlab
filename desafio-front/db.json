@@ -22,6 +22,24 @@
       "email": "extra@example.com",
       "role": "instructor",
       "avatar": "https://randomuser.me/api/portraits/women/3.jpg"
+    },
+    {
+      "id": "1761250570173",
+      "name": "Sakina Krieger",
+      "email": "sakina.krieger@example.com",
+      "role": "instructor"
+    },
+    {
+      "id": "1761250649683",
+      "name": "Jessie Fox",
+      "email": "jessie.fox@example.com",
+      "role": "instructor"
+    },
+    {
+      "id": "1761250656767",
+      "name": "Davut Gönültaş",
+      "email": "davut.gonultas@example.com",
+      "role": "instructor"
     }
   ],
   "courses": [
@@ -37,7 +55,8 @@
       "instructor_ids": [
         "2",
         "3"
-      ]
+      ],
+      "id": "d5e1"
     },
     {
       "course_id": "c-102",
@@ -50,21 +69,8 @@
       "end_date": "2026-02-28",
       "instructor_ids": [
         "2"
-      ]
-    },
-    {
-      "id": "64ab",
-      "title": "test",
-      "description": "test",
-      "start_date": "2505-10-22",
-      "end_date": "2600-05-13",
-      "instructor_ids": [
-        "2"
       ],
-      "course_id": "c-xikzysw06",
-      "creator_id": "2",
-      "status": "draft",
-      "publish_date": "2025-10-22T20:51:08.521Z"
+      "id": "c10d"
     }
   ],
   "lessons": [

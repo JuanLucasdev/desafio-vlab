@@ -9,7 +9,6 @@ export default function Dashboard() {
   const [courses, setCourses] = useState([]);
   const navigate = useNavigate();
 
-
   useEffect(() => {
     const fetchCourses = async () => {
       try {
@@ -17,7 +16,7 @@ export default function Dashboard() {
         const filteredCourses = data.filter(
           (course) =>
             course.creator_id === user.id ||
-            course.instructor_ids.includes(user.id)
+            (course.instructor_ids || []).includes(user.id)
         );
         setCourses(filteredCourses);
       } catch (error) {
@@ -27,6 +26,18 @@ export default function Dashboard() {
 
     fetchCourses();
   }, [user]);
+
+  const handleDeleteCourse = async (course) => {
+    const courseIdentifier = course.id || course.course_id;
+
+    try {
+      await axios.delete(`http://localhost:3000/courses/${courseIdentifier}`);
+      setCourses((prev) => prev.filter((c) => c.course_id !== course.course_id));
+      console.log(`Curso "${course.title}" deletado com sucesso.`);
+    } catch (error) {
+      console.error("Erro ao deletar curso:", error);
+    }
+  };
 
   return (
     <div className="dashboard-container">
@@ -39,7 +50,7 @@ export default function Dashboard() {
                 className="btn-create-course"
                 onClick={() => navigate("/curso/novo")}
               >
-                + Criar Curso
+                 Criar Curso
               </button>
             )}
             <span>
@@ -55,6 +66,7 @@ export default function Dashboard() {
       <main className="dashboard-main">
         <div className="dashboard-course-list">
           <h2 className="dashboard-course-title">Seus Cursos</h2>
+
           {courses.length === 0 ? (
             <p>Você ainda não está associado a nenhum curso.</p>
           ) : (
@@ -63,6 +75,7 @@ export default function Dashboard() {
                 <div key={course.course_id} className="dashboard-course-card">
                   <h3 className="dashboard-course-card-title">{course.title}</h3>
                   <p>{course.description}</p>
+
                   <p>
                     <strong>Início:</strong>{" "}
                     {new Date(course.start_date).toLocaleDateString()}
@@ -71,12 +84,24 @@ export default function Dashboard() {
                     <strong>Fim:</strong>{" "}
                     {new Date(course.end_date).toLocaleDateString()}
                   </p>
-                  <button
-                    className="btn-view-course"
-                    onClick={() => navigate(`/curso/${course.course_id}`)}
-                  >
-                    Ver detalhes
-                  </button>
+
+                  <div className="dashboard-course-actions">
+                    <button
+                      className="btn-view-course"
+                      onClick={() => navigate(`/curso/${course.course_id}`)}
+                    >
+                      Ver detalhes
+                    </button>
+
+                    {user?.role === "instructor" && (
+                      <button
+                        className="btn-delete-course"
+                        onClick={() => handleDeleteCourse(course)}
+                      >
+                         Excluir
+                      </button>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>

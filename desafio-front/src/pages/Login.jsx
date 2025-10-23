@@ -1,13 +1,12 @@
 import React, { useState, useCallback } from "react";
 import "../App.css";
 import Navbar from "../components/navbar";
-import MessageModal from "../components/MessageModal";
 import SocialButton from "../components/SocialButton";
 import GoogleIcon from "../components/icons/GoogleIcon";
 import { Facebook, Apple } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import learning from "../assets/learning.jpg"
+import learning from "../assets/learning.jpg";
 
 export default function Login() {
   const { login } = useAuth();
@@ -16,11 +15,6 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [message, setMessage] = useState({ text: "", type: "" });
-
-  const closeMessageModal = useCallback(() => {
-    setMessage({ text: "", type: "" });
-  }, []);
 
   const handleSubmit = useCallback(
     async (e) => {
@@ -32,8 +26,7 @@ export default function Login() {
 
       const { success, message } = await login(email, password);
       if (success) {
-        setMessage({ text: "Login realizado com sucesso!", type: "success" });
-        setTimeout(() => navigate("/"), 1200);
+        navigate("/"); // redireciona direto para o dashboard
       } else {
         setError(message);
       }
@@ -44,7 +37,6 @@ export default function Login() {
   return (
     <div className="app-container">
       <Navbar />
-      <MessageModal message={message.text} type={message.type} onClose={closeMessageModal} />
 
       <div className="login-wrapper">
         <div className="login-content">

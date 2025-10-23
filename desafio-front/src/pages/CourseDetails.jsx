@@ -4,7 +4,7 @@ import axios from "axios";
 import LessonsList from "../components/LessonsList";
 import { useAuth } from "../context/AuthContext";
 import MessageModal from "../components/MessageModal";
-import "../css/CourseDetails.css"; 
+import "../css/CourseDetails.css";
 
 export default function CourseDetails() {
   const { courseId } = useParams();
@@ -18,6 +18,11 @@ export default function CourseDetails() {
   }, []);
 
   useEffect(() => {
+    if (!user) {
+      navigate("/login");
+      return;
+    }
+
     const fetchData = async () => {
       try {
         const { data: courses } = await axios.get("http://localhost:3000/courses");
@@ -48,7 +53,7 @@ export default function CourseDetails() {
     };
 
     fetchData();
-  }, [courseId]);
+  }, [courseId, user, navigate]);
 
   const handleContinue = () => {
     setMessage({ text: "Curso iniciado com sucesso! (simulação)", type: "success" });
@@ -66,6 +71,11 @@ export default function CourseDetails() {
         <div className="header-content">
           <h1 className="course-title">{course.title}</h1>
           <p className="course-description">{course.description}</p>
+
+          {/* 🔹 Botão Voltar */}
+          <button className="back-btn" onClick={() => navigate("/")}>
+            ← Voltar ao Dashboard
+          </button>
         </div>
       </div>
 

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
 
+/* Algumas cores que posso estar usando ou não*/
 :root {
   --color-primary: #6d28d9;
   --color-primary-dark: #5b21b6;
@@ -26,7 +27,6 @@ body, html {
   background-color: #fff;
 }
 
-/* --- Navbar --- */
 .navbar-header {
   width: 100%;
   background-color: #fff;
@@ -108,7 +108,7 @@ body, html {
   background-color: var(--color-primary-dark);
 }
 
-/* Responsividade da Navbar */
+
 @media (min-width: 640px) {
   .nav-links {
     display: flex;
@@ -126,7 +126,7 @@ body, html {
   }
 }
 
-/* --- Login Layout --- */
+
 .app-container {
   min-height: 100vh;
   display: flex;
@@ -160,9 +160,11 @@ body, html {
   }
 }
 
-/* Illustration */
+
 .illustration-wrapper {
   display: none;
+  background-color: none;
+
 }
 
 @media (min-width: 1024px) {
@@ -171,7 +173,7 @@ body, html {
     flex: 1;
     justify-content: center;
     align-items: center;
-    background-color: #f9fafb;
+    background-color: transparent;
     padding: 1rem;
     border-radius: 12px;
     overflow: hidden;
@@ -186,7 +188,7 @@ body, html {
   object-fit: cover;
 }
 
-/* Form */
+
 .form-area {
   flex: 1;
   max-width: 448px;
@@ -224,7 +226,7 @@ body, html {
   font-size: 0.875rem;
 }
 
-/* Form Inputs */
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -268,7 +270,6 @@ body, html {
   background-color: var(--color-primary-dark);
 }
 
-/* Social Button */
 .btn-social {
   display: flex;
   align-items: center;

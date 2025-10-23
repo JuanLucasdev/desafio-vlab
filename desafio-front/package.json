@@ -12,6 +12,9 @@
     "start": "concurrently \"npm run api\" \"npm run dev\""
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.4",
     "axios": "^1.12.2",
     "date-fns": "^4.1.0",
     "firebase": "^12.4.0",

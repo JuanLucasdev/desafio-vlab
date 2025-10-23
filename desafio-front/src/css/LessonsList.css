@@ -1,0 +1,151 @@
+.lessons-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 1rem 0;
+}
+
+.lessons-list-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-title {
+  margin-bottom: 1rem;
+}
+
+
+.lesson-filter {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.input-field {
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--color-gray-300);
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.select-field {
+  max-width: 180px;
+}
+
+
+.lessons-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.lesson-thumb {
+  width: 120px;
+  height: 68px;
+  border-radius: 0.25rem;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.lesson-info {
+  flex-grow: 1;
+}
+
+.lesson-info p {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  margin: 0.3rem 0 0 0;
+}
+
+.lesson-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.small-btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 0.3rem;
+  background: none;
+}
+
+.pagination .active {
+  background-color: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+
+@media (max-width: 768px) {
+  .lessons-container {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    position: relative;
+    padding-bottom: 4.5rem; 
+  }
+
+  .lesson-filter {
+    flex-direction: column;
+  }
+
+  .lesson-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lesson-thumb {
+    width: 100%;
+    height: auto;
+    margin: 0 0 0.75rem 0;
+  }
+
+  .lesson-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .lessons-container > button.MuiButton-contained {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: #5624d0 !important;
+    color: #fff !important;
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .lessons-container > button.MuiButton-contained:hover {
+    background-color: #4b1bb5 !important;
+  }
+}

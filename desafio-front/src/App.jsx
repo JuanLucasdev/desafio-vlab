@@ -4,8 +4,8 @@ import { AuthProvider } from "./context/AuthContext";
 
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
-import CourseDetails from "./pages/CourseDetails"; 
-import CourseForm from "./pages/CourseForm"; 
+import CourseDetails from "./pages/CourseDetails";
+import CourseForm from "./pages/CourseForm";
 import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
+
           <Route
             path="/"
             element={
@@ -22,8 +23,23 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/curso/novo" element={<CourseForm />} /> 
-          <Route path="/curso/:courseId" element={<CourseDetails />} /> 
+          <Route
+            path="/curso/novo"
+            element={
+              <ProtectedRoute>
+                <CourseForm />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/curso/:courseId"
+            element={
+              <ProtectedRoute>
+                <CourseDetails />
+              </ProtectedRoute>
+            }
+          />
+
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
