@@ -18,7 +18,7 @@ Lucille UI / CSS customizado
 
 Para rodar o projeto localmente
 1️⃣ Clonar o repositório
-git clone https://github.com/seuusuario/seuprojeto.git
+git clone https://github.com/JuanLucasdev/desafio-vlab.git
 cd seuprojeto
 
 2️⃣ Instalar as dependências
