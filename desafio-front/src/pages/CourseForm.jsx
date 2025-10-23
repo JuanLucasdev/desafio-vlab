@@ -24,7 +24,7 @@ export default function CourseForm() {
   const [feedback, setFeedback] = useState(null);
   const [dateError, setDateError] = useState("");
 
-  // 🔐 Protege a rota: apenas instrutores logados podem acessar
+  
   useEffect(() => {
     if (!user) {
       navigate("/login");
@@ -35,7 +35,7 @@ export default function CourseForm() {
     }
   }, [user, navigate]);
 
-  // 🧩 Carrega curso se for edição
+  
   useEffect(() => {
     if (isEdit) {
       axios
@@ -59,7 +59,7 @@ export default function CourseForm() {
     }
   }, [courseId, isEdit]);
 
-  // 🔍 Buscar instrutores já existentes
+  
   const handleSearchInstructor = async () => {
     try {
       const res = await axios.get("http://localhost:3000/users?role=instructor");
@@ -95,7 +95,7 @@ export default function CourseForm() {
     }
   };
 
-  // ➕ Adicionar instrutor ao curso
+  
   const handleAddInstructor = (instructorId) => {
     if (!course.instructor_ids.includes(instructorId)) {
       setCourse((prev) => ({
@@ -108,7 +108,7 @@ export default function CourseForm() {
     }
   };
 
-  // ➖ Remover instrutor
+  
   const handleRemoveInstructor = (instructorId) => {
     setCourse((prev) => ({
       ...prev,
@@ -117,7 +117,7 @@ export default function CourseForm() {
     setFeedback({ type: "success", message: "Instrutor removido com sucesso!" });
   };
 
-  // ✅ Validação
+  
   const validate = () => {
     if (!course.title || !course.description || !course.start_date || !course.end_date) {
       setFeedback({ type: "error", message: "Todos os campos são obrigatórios." });
@@ -131,7 +131,7 @@ export default function CourseForm() {
     return true;
   };
 
-  // 💾 Enviar dados
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
