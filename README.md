@@ -15,7 +15,6 @@ React Router DOM (navegação)
 date-fns (manipulação de datas)
 json-server (API fake local)
 Lucille UI / CSS customizado
-Vercel (deploy)
 
 Para rodar o projeto localmente
 1️⃣ Clonar o repositório
